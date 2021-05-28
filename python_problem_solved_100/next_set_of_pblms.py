@@ -1758,21 +1758,103 @@ res = "ddmi-9500-2#dir bootflash:guest-share/ddr/chaos/\nDirectory of flash:gues
 #
 # print(new)
 
-import re
-res = "https://www.valid.in"
+# import re
+# res = "https://www.valid.in"
+#
+# pattern = re.compile(r'^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$')
+#
+# matches = pattern.findall(res)
+# for match in matches:
+#     if match:
+#         print(match)
+#         proto, dom, tld, v= match
+#         print(dom)
+#         print(tld)
+#         dom = dom.strip(r'www.')
+#         print(dom)
+#         full_dom = f"{dom}.{tld}"
+#         print(full_dom)
+#         print(type(full_dom))
 
-pattern = re.compile(r'^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$')
 
-matches = pattern.findall(res)
-for match in matches:
-    if match:
-        print(match)
-        proto, dom, tld, v= match
-        print(dom)
-        print(tld)
-        dom = dom.strip(r'www.')
-        print(dom)
-        full_dom = f"{dom}.{tld}"
-        print(full_dom)
-        print(type(full_dom))
 
+# import re
+# import datetime
+# from datetime import datetime
+# import time
+# from ddrlib import *
+# import os
+# import json
+#
+# USECASE_NAME = "<<USECASENAME>>"
+# #TARGET_DIR = f"/bootflash/guest-share/ddr/{USECASE_NAME}/"
+# TARGET_DIR = "/bootflash/guest-share/ddr/tac_cpu/"
+#
+# DEVICE_IP = "<<DEVICEIP>>"
+# USERNAME = "<<USERNAME>>"
+# PASSWORD = "<<PASSSWORD>>"
+#
+# timestamp =  "TS_" + datetime.now().strftime("%m-%d-%Y_%H:%M:%S.%f")
+# device=['127.0.0.1', 830, 'guestshell', 'none']
+#
+# def write_to_file(data: str, filename: str, mode: str = "w"):
+#     with open(TARGET_DIR+filename, mode) as f:
+#         f.write(data)
+#
+# def append_to_file(data: str, filename: str):
+#     write_to_file(data, filename, "a")
+#
+# def log_data(data: str):
+#     append_to_file("output.json")
+#
+# def save_output(data: str) -> None:
+#     write_to_file(data, "output.json", "w")
+#
+# # NETCONF connection to device uses localhost IP, port 830, username "guestshell" with no password
+#
+# device = ["127.0.0.1", 830, "guestshell", "none"]
+#
+# try:
+# # wait for notification generated with Syslog for configuration mode exit is generated on device
+#     ddr_nc_notify(device, False, ["CONFIG_I", "Configured from"])
+#
+#     commands = [
+#         f"show proc cpu sort",
+#         f"show proc cpu hist",
+#         f"show proc cpu platform sorted",
+#         f"show interface",
+#         f"show interface stats",
+#         f"show log ",
+#         f"show ip traffic",
+#         f"show users",
+#         f"show platform software fed switch active punt cause summary",
+#         f"show platform software fed switch active cpu-interface",
+#         f"show platform software fed switch active punt cpuq all",
+#         f"no monitor capture tac_cpu",
+#         f"monitor capture tac_cpu control-plane in match any file location flash:/guest-share/tac-cpu",
+#         f"monitor capture tac_cpu start",
+#         f"monitor capture tac_cpu stop"
+#     ]
+#
+#     output = {}
+#     for command in commands:
+#         output[command] = ddr_cli_command(device, False, 'cli', command, True, timestamp)
+#
+#     # One way or another, the output goes into output.json
+#     save_output(json.dumps(output))
+#
+#     ddr_write_to_syslog("DDR-Python static use case: uc-tac-cpu complete")
+# except Exception as e:
+#     raise Exception("DDR-Python tac_cpu usecase failed")
+#
+
+
+def cuboid_volume(l):
+    print(l)
+    return (l*l*l)
+
+length = [2,1.1, -2.5, 2j, 'two']
+
+for i in range(len(length)):
+    print(length[i])
+    print ("The volume of cuboid:",cuboid_volume(length[i]))

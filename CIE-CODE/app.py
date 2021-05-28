@@ -11,10 +11,6 @@ from wtforms.widgets import TextArea
 import os
 from optparse import OptionParser
 import json
-from pprint import pprint as pp
-import shlex, time
-import ast
-import pprint
 
 
 from url_check_main import URL_Check
@@ -44,12 +40,15 @@ def process_forma_values(url):
 
     result = {}
     urlcheckinst = URL_Check(url)
-    validity = urlcheckinst.url_verify()
-
-    if validity:
+    validity, url_failed = urlcheckinst.url_verify()
+  
+    if validity and not url_failed:
         result[url] = f"The Given URL is Clean - {url}"
-    else:
+    elif not validity and not url_failed:
         result[url] = f"The Given URL is Malware Affected - {url}"
+    elif url_failed:
+        result[url] = f"The Given URL is Not in Valid URL Format - {url}"
+
     print(json.dumps(result))
     return(json.dumps(result))
 

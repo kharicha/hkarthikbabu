@@ -11,16 +11,12 @@ def valid_url(url):
         full_dom = ""
         for match in matches:
             if match:
-                print(f"karthik match is {match}")
                 proto, dom, tld, v= match
                 dom = dom.strip(r'www.')
-                print(f"karthik dom is {dom}")
                 full_dom = f"{dom}.{tld}"
         return full_dom 
     except Exception as e:
         raise Exception("The Given URL is not in Valid URL Format\n")
-
-    print(full_dom)
 
 #########################
 # CONNECT TO THE MONGO DB
@@ -29,10 +25,8 @@ def valid_url(url):
 try:
     mongo_uri = "mongodb://localhost:27017/"
     client = MongoClient(mongo_uri)
-    print(client.list_database_names())
 except Exception as e:
     raise Exception("Not able to connect to the Mongo DB\n")
-
 
 ###################################
 # DELETE THE VALID/INVALID DATABASE
