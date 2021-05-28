@@ -1,4 +1,19 @@
-#!/usr/bin/python
+##################################################################################
+#
+# url_check_main - 
+#    Main backend module that receives the URL and does the following,
+#	Validate the given URL whether it is actually given in an URL Format
+#	Connect to the MongoDB
+#	Verify if the given URL is present in the Invalid URL Database
+#	Verify if the given URL is present in the valid URL Database
+#	If the given URL is not present in both the database it will be treated
+#        as unknown and will be declared as invalid URL for security reasons (this could be changed to valid also)
+#	So this is the main code which looks up in db for malwares returns the result with URL is safe or Malware back to the application.
+#
+#  Revision History
+#    * 1.0 - 5.28.21 - Karthik Babu Harichandra Babu - Initial version
+#
+#################################################################################
 
 import re
 from pymongo import MongoClient

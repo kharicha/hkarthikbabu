@@ -1,3 +1,13 @@
+#########################################################################################
+#
+# url_check_hdl -
+#   This is the python script which executes the url_check usecase using command line args
+#
+#  Revision History
+#    * 1.0 - 5.28.21 - Karthik Babu Harichandra Babu - Initial version
+#
+#########################################################################################
+
 from url_check_main import URL_Check
 from optparse import OptionParser
 import json

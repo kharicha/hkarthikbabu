@@ -1,3 +1,33 @@
+##################################################################################
+#
+# db_create - Python Script for creating the databases and enteries in MongoDB
+#   This is the main module for the database connect/creating the sub databases and also stroing the collections for each data base using key value store,
+#	Connect to MongoDB
+#	Delete the existing database (for initial)
+#	Create a new database called invalid url
+#	Switch to the database
+#	Switch to the collection
+#	Read a file which contains all the malware affected URL and store them in a k-v pair into the database,
+#	Example of one such k-v pair,
+#	{
+#                "url": “karthik.com”,
+#                "status": "malware"
+#       }
+#	Create a new database called valid url
+#	Switch to the database
+#	Switch to the collection
+#	Read a file which contains all the clean URL and store them in a k-v pair into the database,
+#	Example of one such k-v pair,
+#	{
+#                "url": “babu.com”,
+#                "status": "clean"
+#       }
+#
+#  Revision History
+#    * 1.0 - 5.28.21 - Karthik Babu Harichandra Babu - Initial version
+#
+#################################################################################
+
 from pymongo import MongoClient
 import re
 
