@@ -1,0 +1,46 @@
+'''
+Given an integer number n, return the difference between the product of its digits and the sum of its digits.
+
+Example 1:
+Input: n = 234
+Output: 15
+Explanation:
+Product of digits = 2 * 3 * 4 = 24
+Sum of digits = 2 + 3 + 4 = 9
+Result = 24 - 9 = 15
+
+Example 2:
+Input: n = 4421
+Output: 21
+Explanation:
+Product of digits = 4 * 4 * 2 * 1 = 32
+Sum of digits = 4 + 4 + 2 + 1 = 11
+Result = 32 - 11 = 21
+
+'''
+
+#method 1
+
+def prd_sum(n):
+    p = 1
+    s = 0
+
+    digits = [int(x) for x in str(n)]
+    # s = sum(digits)
+    # print(s)
+    for i in digits:
+        s += i
+        p = p * i
+    print(s)
+    print(p)
+    print (p - s)
+
+#method 2
+
+def prd_sum(n):
+    from functools import reduce
+    from operator import mul
+    digits = [int(x) for x in str(n)]
+    print(reduce(mul, digits) - sum(digits))
+
+prd_sum(4421)
